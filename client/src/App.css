@@ -89,6 +89,10 @@ input {
   border-radius: 5px;
 }
 
+.drinks-search {
+  display: flex;
+  justify-content: center;
+}
 /* .navbar {
   margin: 0;
   width: 100%;
@@ -128,13 +132,14 @@ a {
   text-decoration: none;
   margin: 0.625rem;
   /* font-size: 25px; */
-  font-size: 1.56rem;
+  font-size: 1 rem;
+  /* font-size: 1.56rem; */
 }
 a:hover {
   opacity: 0.60;
 }
 
-.create-recipe {
+.create-spec {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -146,7 +151,7 @@ a:hover {
   margin: 20px;
   width: 400px;
 }
-.create-recipe form {
+.create-spec form {
   display: flex;
   flex-direction: column;
 }
@@ -192,4 +197,8 @@ p {
 #logout-btn {
   height: 2rem;
   font-size: 1rem;
+}
+
+button.submit {
+  height: 2 rem;
 }

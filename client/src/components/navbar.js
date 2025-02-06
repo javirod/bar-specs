@@ -14,8 +14,8 @@ export const Navbar = () => {
     return <div className="navbar">
         <div className='navlinks'>
             <Link to="/"> Home</Link>
-            <Link to="/create-specs"> Create Specs</Link>
-            <Link to="/saved-specs"> Saved Specs</Link>
+            {cookies.access_token && <Link to="/create-specs"> Create Specs</Link>}
+            <Link to="/wines"> Wines</Link>
         </div>
         <div>
             {!cookies.access_token ? (<Link to="/auth"> Login/Register</Link>) : <button id ="logout-btn" onClick={logout}> Logout</button>}

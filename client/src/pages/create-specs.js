@@ -55,8 +55,8 @@ export const CreateSpecs = () => {
         }
     };
     return (
-        <div className="create-recipe">
-            <h2>Create Recipe</h2>
+        <div className="create-spec">
+            <h2>Create Spec</h2>
             <form onSubmit={onSubmit}>
                 <label htmlFor="name"> Name</label>
                 <input type="text" id="name" name="name" onChange={handleChange}/>

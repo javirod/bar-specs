@@ -3,8 +3,9 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import { Home }from './pages/home';
 import { Auth } from './pages/auth';
 import { CreateSpecs } from './pages/create-specs';
-import { SavedSpecs } from './pages/saved-specs';
-import { Navbar }from './components/navbar'
+import { Wines } from './pages/wines';
+import { Navbar } from './components/navbar';
+import ProtectedRoutes from './components/protected-routes';
 
 function App() {
   return (
@@ -14,8 +15,10 @@ function App() {
         <Routes> 
           <Route path="/" element={<Home />}/>
           <Route path="/auth" element={<Auth />}/>
-          <Route path="/create-specs" element={<CreateSpecs />}/>
-          <Route path="/saved-specs" element={<SavedSpecs />}/>
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/create-specs" element={<CreateSpecs />}/>
+          </Route>
+          <Route path="/wines" element={<Wines />}/>
         </Routes>
       </Router>
     </div>
