@@ -14,6 +14,6 @@ app.use("/auth", userRouter);
 app.use("/specs", specsRouter);
 
 dotenv.config();
-mongoose.connect(process.env.URI);
+mongoose.connect(env.URI);
 
 app.listen(port, () => console.log("SERVER STARTED"));
