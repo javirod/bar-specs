@@ -4,13 +4,27 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 export const Auth = () => {
+    const [isLogin, setIsLogin] = useState(true);
+
     return <div className="auth">
-        <Login />
-        <Register /> 
+        {isLogin ? (
+            <Login
+                isLogin={isLogin}
+                setIsLogin={setIsLogin}
+                loginMessage="Don't have an account?"
+            />
+            
+        ) : (
+            <Register
+                isLogin={isLogin}
+                setIsLogin={setIsLogin}
+                loginMessage="Already have an account?"
+            />
+        )}
     </div>
 }; 
 
-const Login = () => {
+const Login = ({isLogin, setIsLogin, loginMessage}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -38,12 +52,16 @@ const Login = () => {
             password={password} 
             setPassword={setPassword}
             label="Login"
+            switchLabel="Register"
             onSubmit={onSubmit}
+            loginMessage={loginMessage}
+            isNewLogin={false}
+            setIsLogin={setIsLogin}
         />
     );
 };
 
-const Register = () => {
+const Register = ({isLogin, setIsLogin, loginMessage}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -64,27 +82,37 @@ const Register = () => {
             password={password} 
             setPassword={setPassword}
             label="Register"
+            switchLabel="Login"
             onSubmit={onSubmit}
+            loginMessage={loginMessage}
+            isNewLogin={true}
+            setIsLogin={setIsLogin}
         />
     );
 };
 
-const Form = ({username, setUsername, password, setPassword, label, onSubmit}) => {
+const Form = ({username, setUsername, password, setPassword, label, switchLabel, onSubmit, loginMessage, isNewLogin, setIsLogin}) => {
     return (
-        <div className="auth-container"> 
-            <form onSubmit={onSubmit}>
-                <h2>{label}</h2>
-                <div className="form-group">
-                    <label htmlFor="username"> Username: </label>
-                    <input type="text" id="username" value={username} onChange={(event) => setUsername(event.target.value)}/>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password"> Password: </label>
-                    <input type="password" id="password" value={password}  onChange={(event) => setPassword(event.target.value)}/>
-                </div>
+        <div className="auth-container">
+            <div className="auth-box">
+                <form onSubmit={onSubmit}>
+                    <h2>{label}</h2>
+                    <div className="form-group">
+                        <label htmlFor="username"> Username: </label>
+                        <input type="text" id="username" value={username} onChange={(event) => setUsername(event.target.value)}/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="password"> Password: </label>
+                        <input type="password" id="password" value={password}  onChange={(event) => setPassword(event.target.value)}/>
+                        <p className="toggle-link">
+                            {/* {loginMessage} <button className="login-btn" onClick={() => setIsLogin(isNewLogin)}>{label}</button> */}
+                            {loginMessage} <span onClick={() => setIsLogin(isNewLogin)}>{switchLabel}</span>
+                        </p>
+                    </div>
 
-                <button type="submit"> {label}</button>
-            </form>
+                    <button type="submit"> {label}</button>
+                </form>
+            </div>
         </div>
     );
 

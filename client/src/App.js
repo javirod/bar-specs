@@ -14,11 +14,11 @@ function App() {
         <Navbar />
         <Routes> 
           <Route path="/" element={<Home />}/>
+          <Route path="/wines" element={<Wines />}/>
           <Route path="/auth" element={<Auth />}/>
           <Route element={<ProtectedRoutes />}>
             <Route path="/create-specs" element={<CreateSpecs />}/>
           </Route>
-          <Route path="/wines" element={<Wines />}/>
         </Routes>
       </Router>
     </div>

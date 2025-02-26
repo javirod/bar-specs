@@ -5,8 +5,7 @@ export const Wines = () => {
    // Varietal (grape)
    // Region/Appellation 
    // Alcohol content
-   // Taste profile
+   // Taste profile/ flavors
    // Aromas
-   // Flavors
 
 }

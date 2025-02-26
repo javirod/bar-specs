@@ -38,32 +38,43 @@ export const Home = () => {
     return (
         <div>
             <h1>Drink Specs</h1>
-            <input className="drink-search"
-                type="text"
-                value={searchItem}
-                onChange={handleInputChange}
-                placeholder="Search"
-            />
+            <div className="search-container">
+                <input className="drink-search"
+                    type="text"
+                    value={searchItem}
+                    onChange={handleInputChange}
+                    placeholder="Search"
+                />
+            </div>
             {loading && <p>Loading...</p>}
             {error && <p>There was an error loading the specs</p>}
             {filteredSpecs.length === 0
                 ? <h3>No drinks found</h3>
                 : <ul>
-                    {filteredSpecs.map((spec) => (
-                        <li key={spec._id}>
-                            <div>
-                                <h2>{spec.name}</h2>
-                            </div>
-                            <ul>
-                                {spec.ingredients.map((ings) => (
-                                    <li className="ing-list">
-                                        {ings}
-                                    </li>
-                                ))}
-                            </ul>
-                            <img src={spec.imageUrl} alt={spec.name}/>
-                        </li>
-                    ))}
+                    <div className="drink-container">
+                        {filteredSpecs.map((spec) => (
+                            <li key={spec._id} className="drink-card">
+                                <div>
+                                    <h2>{spec.name}</h2>
+                                </div>
+                                <div className="ings-card">
+                                    <ul>
+                                        {spec.ingredients.map((ings) => (
+                                            <li className="ing-list">
+                                                {ings}
+                                            </li>
+                                        ))}
+                                    <details>
+                                        <summary>Glassware/Garnish:</summary>
+                                        <p>{spec.glassware}</p>
+                                        {spec.garnish.map((garnish) => (<li className="ing-list">{garnish}</li>))}
+                                    </details>
+                                    </ul>
+                                </div>
+                                {/* <img src={spec.imageUrl} alt={spec.name}/> */}
+                            </li>
+                        ))}
+                    </div>
                 </ul>
             }
         </div>

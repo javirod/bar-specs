@@ -38,7 +38,7 @@
 } */
 
 .App {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -49,8 +49,9 @@
 body {
   margin: 0;
   padding: 0;
+  background: #f8f8f8;
 }
-
+/*
 .auth {
   display: flex;
   justify-content: center;
@@ -104,7 +105,7 @@ input {
   color: white;
   text-decoration: none;
 } */
-.navbar {
+/* .navbar {
   margin: 0;
   width: 100%;
   height: 5rem;
@@ -117,7 +118,7 @@ input {
 }
 .navlinks {
   margin: auto;
-}
+} */
 
 /* .logout-navbar {
   display: flex;
@@ -127,14 +128,15 @@ input {
   text-decoration: none;
 } */
 
-a {
+/* a {
   color: white;
   text-decoration: none;
-  margin: 0.625rem;
+  margin: 0.625rem; */
   /* font-size: 25px; */
-  font-size: 1 rem;
+  /* font-size: 1 rem;
   /* font-size: 1.56rem; */
-}
+/* } */ 
+/* 
 a:hover {
   opacity: 0.60;
 }
@@ -201,4 +203,397 @@ p {
 
 button.submit {
   height: 2 rem;
+} */
+
+
+/***** Home *****/
+
+/* Container styling */
+.drink-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Individual drink card */
+.drink-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.drink-card:hover {
+  transform: scale(1.05);
+}
+
+.ings-card {
+  text-align: left;
+}
+
+/* Title Styling */
+h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Drink Name */
+h2 {
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+/* Glassware and Garnish */
+p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Ingredient List */
+.ing-list {
+  background: #f8f8f8;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  list-style: none;
+}
+
+/* Drink Image */
+img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+/* Search Bar Container and Styling */
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.drink-search {
+  width: 100%;
+  max-width: 250px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .drink-container {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .drink-container {
+      grid-template-columns: 1fr;
+  }
+}
+
+/***** Navbar *****/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 15px 20px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navlinks {
+  display: flex;
+  gap: 20px;
+}
+
+.navlinks a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition: color 0.3s ease, background 0.3s ease;
+  border-radius: 5px;
+}
+
+.navlinks a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #f8b400;
+}
+
+#logout-btn {
+  background-color: #f8f8f8;/*#f04e4e*/
+  color: black;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#logout-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/***** Auth *****/
+
+/* Centering the forms container */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+
+/* Wrapper to position forms side by side */
+.auth-box {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  /* justify-content: center; */
+}
+
+/* Individual form styling */
+form {
+  /* background: white; */
+  padding: 20px;
+  border-radius: 10px;
+  /* box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); */
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+}
+
+/* Form title */
+h2 {
+  color: #333;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+/* Form input fields */
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+/* Input styling */
+input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #f8b400;
+  box-shadow: 0px 0px 5px rgba(248, 180, 0, 0.5);
+  outline: none;
+}
+
+/* Button styling */
+button {
+  background: #f8b400;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #d99a00;
+  transform: scale(1.05);
+}
+
+.login-btn {
+  background: none;
+  border: none;
+  color: black;
+}
+
+.login-btn:hover {
+  background: none;
+  transform: scale(1);
+}
+
+/* Link to switch between forms */
+.toggle-link {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.toggle-link span {
+  color: #f8b400;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.toggle-link span:hover {
+  text-decoration: underline;
+}
+
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .auth-forms {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+  }
+
+  form {
+      max-width: 100%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*****  Create Spec *****/
+
+/* Center the create-spec form on the page */
+.create-spec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  min-height: 75vh;
+  padding: 20px;
+}
+
+/* Form container */
+.create-spec form {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Page title */
+.create-spec h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form labels */
+.create-spec label {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #444;
+}
+
+/* Input styling */
+.create-spec input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.create-spec input:focus {
+  border-color: #f8b400;
+  box-shadow: 0px 0px 5px rgba(248, 180, 0, 0.5);
+  outline: none;
+}
+
+/* Ingredient and Garnish fields */
+.create-spec .dynamic-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Add ingredient/garnish buttons */
+.create-spec button[type="button"] {
+  background: #f8b400;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-bottom: 10px;
+}
+
+.create-spec button[type="button"]:hover {
+  background: #d99a00;
+  transform: scale(1.05);
+}
+
+/* Submit button */
+.create-spec button[type="submit"] {
+  background: #f8b400;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+}
+
+.create-spec button[type="submit"]:hover {
+  background: #d99a00;
+  transform: scale(1.05);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .create-spec form {
+      max-width: 90%;
+  }
 }
