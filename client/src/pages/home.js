@@ -11,7 +11,7 @@ export const Home = () => {
     useEffect(() => {
         const fetchSpec = async () => {
             try {
-                const response = await axios.get("bar-specs-be.javirod09.workers.dev/specs");
+                const response = await axios.get("https://bar-specs-be.javirod09.workers.dev/specs");
                 setSpecs(response.data);
                 setFilteredSpecs(response.data);
             } catch(err) {
