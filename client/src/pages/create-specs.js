@@ -47,7 +47,7 @@ export const CreateSpecs = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post("http://localhost:3001/specs", {...spec});
+            await axios.post("bar-specs-be.javirod09.workers.dev/specs", {...spec});
             alert("Spec created");
             navigate("/");
         } catch(err) {
