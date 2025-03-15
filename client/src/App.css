@@ -209,6 +209,12 @@ button.submit {
 /***** Home *****/
 
 /* Container styling */
+ul {
+  list-style: none;
+  padding: 10px ;
+  margin: 0;
+}
+
 .drink-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -304,7 +310,7 @@ img {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .drink-container {
       grid-template-columns: 1fr;
   }
