@@ -104,6 +104,8 @@ const Form = ({username, setUsername, password, setPassword, label, switchLabel,
                     <div className="form-group">
                         <label htmlFor="password"> Password: </label>
                         <input type="password" id="password" value={password}  onChange={(event) => setPassword(event.target.value)}/>
+                    </div>
+                    <div>
                         <p className="toggle-link">
                             {/* {loginMessage} <button className="login-btn" onClick={() => setIsLogin(isNewLogin)}>{label}</button> */}
                             {loginMessage} <span onClick={() => setIsLogin(isNewLogin)}>{switchLabel}</span>

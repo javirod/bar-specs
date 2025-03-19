@@ -64,12 +64,12 @@ export const Home = () => {
                                                 {ings}
                                             </li>
                                         ))}
-                                    <details>
+                                    </ul>
+                                    <details >
                                         <summary>Glassware/Garnish:</summary>
                                         <p>{spec.glassware}</p>
                                         {spec.garnish.map((garnish) => (<li className="ing-list">{garnish}</li>))}
                                     </details>
-                                    </ul>
                                 </div>
                                 {/* <img src={spec.imageUrl} alt={spec.name}/> */}
                             </li>
