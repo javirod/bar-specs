@@ -19,6 +19,10 @@ export const Navbar = () => {
         navigate("/auth")
     }
 
+    const navHome = () => {
+        navigate("/")
+    }
+
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
       }
@@ -50,7 +54,7 @@ export const Navbar = () => {
         <div ref={menuRef}>
             <div className="navbar">
                 <div className="logo-links-container">
-                    <div className="logo-container">
+                    <div className="logo-container" onClick={navHome}>
                         <img className='logo' src='/sf64.png' alt='Specfor Logo'></img>
                         <h2 className='logo-txt'>SPECFOR</h2>
                     </div>
@@ -65,7 +69,7 @@ export const Navbar = () => {
                 </div>
             </div>
             <div className='navbar-mobile'>
-                <div className="logo-container">
+                <div className="logo-container" onClick={navHome}>
                     <img className='logo' src='/sf64.png' alt='Specfor Logo'></img>
                     <h2 className='logo-txt'>SPECFOR</h2>
                 </div>

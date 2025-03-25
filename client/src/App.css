@@ -335,6 +335,9 @@ img {
   display: flex;
   gap: 10px;
 }
+.logo-container:hover {
+  cursor: pointer;
+}
 .logo-links-container {
   display: flex;
   gap: 50px;
@@ -344,9 +347,9 @@ img {
 .logo {
   height: 30px;
 }
+
 .logo-txt {
   color: white;
-  cursor: default;
 }
 
 .navlinks {
