@@ -46,10 +46,10 @@ export const Home = () => {
                     placeholder="Search"
                 />
             </div>
-            {loading && <p>Loading...</p>}
-            {error && <p>There was an error loading the specs</p>}
+            {loading && <p className="loading">Loading...</p>}
+            {error && <p className="loading">There was an error loading the specs</p>}
             {filteredSpecs.length === 0
-                ? <h3>No drinks found</h3>
+                ? <h3 className="loading">No drinks found</h3>
                 : <ul>
                     <div className="drink-container">
                         {filteredSpecs.map((spec) => (

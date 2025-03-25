@@ -1,5 +1,5 @@
 export const Wines = () => {
-   return <div>Wines coming soon</div>
+   return <div className="wines">Wines coming soon</div>
 
    // Vintage
    // Varietal (grape)

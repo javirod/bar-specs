@@ -5,7 +5,6 @@ const SpecSchema = new mongoose.Schema({
     ingredients: [{ type: String, required: true }],
     garnish: [{ type: String, required: false}],
     glassware: { type: String, required: false},
-    imageUrl: { type: String, required: true},
     userOwner: { type: mongoose.Schema.Types.ObjectId, ref: "users", required: true }
 });
 

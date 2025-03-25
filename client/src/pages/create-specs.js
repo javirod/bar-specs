@@ -72,7 +72,7 @@ export const CreateSpecs = () => {
                     onChange={(event) => handleIngredientChange(event, idx)}
                     />
                 ))}
-                <button onClick={addIngredient} type="button"> Add Ingredient</button>
+                <button className="add-btn" onClick={addIngredient} type="button"> Add Ingredient</button>
                 
                 <label htmlFor="garnish"> Garnish</label>
                 {/* input for garnish here */}
@@ -85,12 +85,11 @@ export const CreateSpecs = () => {
                     onChange={(event) => handleGarnishChange(event, idx)}
                     />
                 ))}
-                <button onClick={addGarnish} type="button"> Add Garnish</button>
+                <button className="add-btn" onClick={addGarnish} type="button"> Add Garnish</button>
                 
                 <label htmlFor="glassware"> Glassware</label>
                 <input type="text" id="glassware" name="glassware"  onChange={handleChange}/>
-                <label htmlFor="imageUrl"> Image URL</label>
-                <input type="text" id="imageUrl" name="imageUrl"  onChange={handleChange}/>
+                {/* <input type="text" id="imageUrl" name="imageUrl"  onChange={handleChange}/> */}
                 <button type="submit"> Create Spec</button>
 
             </form>
